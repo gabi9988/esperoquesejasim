@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Surpresa de Dia dos Namorados 💖</title>
+  <style>
+    body {
+      background-color: #ffe6f0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    .hearts {
+      font-size: 30px;
+      color: #ff4d88;
+    }
+    .music {
+      margin-top: 30px;
+    }
+    .pedido {
+      display: none;
+      opacity: 0;
+      transition: opacity 2s ease;
+    }
+    .pedido.show {
+      display: block;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts">💕🌸💘🌷💖</div>
+  <h1>Tenho uma coisa pra você ouvir primeiro...</h1>
+
+  <div class="music">
+    <button onclick="tocarMusica()">
+      💖 Tocar Música
+    </button>
+
+    <iframe id="ytplayer" width="0" height="0" frameborder="no"
+      allow="autoplay; encrypted-media"
+      src="https://www.youtube.com/embed/h9-LLQqAOXQ?start=24">
+    </iframe>
+  </div>
+
+  <div class="pedido" id="pedido">
+    <h1>Tenho uma perguntinha pra você...</h1>
+    <img src="pedido-namoro-flork.png" alt="Pedido de namoro Flork fofo">
+  </div>
+
+  <script>
+    function tocarMusica() {
+      document.getElementById('ytplayer').src += '&autoplay=1';
+
+      // Espera 5 segundos e mostra o pedido com efeito suave
+      setTimeout(() => {
+        document.getElementById('pedido').classList.add('show');
+      }, 5000);
+    }
+  </script>
+</body>
+</html>
